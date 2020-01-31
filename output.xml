@@ -1,0 +1,2628 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.8.1 on win32)" generated="20200131 15:57:25.672" rpa="false">
+<suite id="s1" name="Robot Player" source="C:\Users\VP\gitwa\robot_study\fp_robot_player\robot_player.robot">
+<test id="s1-t1" name="RobotPlayer">
+<kw name="Open Browser To Findpairs">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${FINDPAIRS URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>alias=player1</arg>
+</arguments>
+<msg timestamp="20200131 15:57:25.917" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/findpairs/'.</msg>
+<status status="PASS" starttime="20200131 15:57:25.917" endtime="20200131 15:57:31.227"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:57:25.916" endtime="20200131 15:57:31.227"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<assign>
+<var>&amp;{browserMap}</var>
+</assign>
+<msg timestamp="20200131 15:57:31.229" level="INFO">&amp;{browserMap} = { }</msg>
+<status status="PASS" starttime="20200131 15:57:31.228" endtime="20200131 15:57:31.229"></status>
+</kw>
+<kw name="Sign In">
+<arguments>
+<arg>${robotUser}</arg>
+<arg>player1</arg>
+<arg>${browserMap}</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200131 15:57:34.232" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200131 15:57:31.230" endtime="20200131 15:57:34.232"></status>
+</kw>
+<kw name="Switch Browser" library="SeleniumLibrary">
+<doc>Switches between active browsers using ``index_or_alias``.</doc>
+<arguments>
+<arg>${browser}</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:57:34.232" endtime="20200131 15:57:34.233"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${FINDPAIRS URL}</arg>
+</arguments>
+<msg timestamp="20200131 15:57:34.239" level="INFO">Current location is 'http://127.0.0.1:8000/findpairs/'.</msg>
+<status status="PASS" starttime="20200131 15:57:34.233" endtime="20200131 15:57:34.239"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>css:input.name</arg>
+<arg>${user}</arg>
+</arguments>
+<msg timestamp="20200131 15:57:34.240" level="INFO">Typing text 'Sanni' into text field 'css:input.name'.</msg>
+<status status="PASS" starttime="20200131 15:57:34.240" endtime="20200131 15:57:34.346"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:i.fa.fa-sign-in</arg>
+</arguments>
+<msg timestamp="20200131 15:57:34.346" level="INFO">Clicking element 'css:i.fa.fa-sign-in'.</msg>
+<status status="PASS" starttime="20200131 15:57:34.346" endtime="20200131 15:57:34.407"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${browserMap}</arg>
+<arg>${user}=${browser}</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:57:34.407" endtime="20200131 15:57:34.408"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:57:31.229" endtime="20200131 15:57:34.408"></status>
+</kw>
+<kw name="${i} IN RANGE [ 2 ]" type="for">
+<kw name="${i} = 0" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+<arg>Let browser render the page</arg>
+</arguments>
+<msg timestamp="20200131 15:57:37.410" level="INFO">Slept 3 seconds</msg>
+<msg timestamp="20200131 15:57:37.410" level="INFO">Let browser render the page</msg>
+<status status="PASS" starttime="20200131 15:57:34.409" endtime="20200131 15:57:37.410"></status>
+</kw>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<arguments>
+<arg>css:body &gt; div &gt; span &gt; div &gt; span &gt; div.online &gt; div:nth-child(4)</arg>
+<arg>???</arg>
+<arg>10min</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:57:37.410" endtime="20200131 15:57:37.440"></status>
+</kw>
+<kw name="Join Game">
+<arguments>
+<arg>${first-game}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${game}</arg>
+</arguments>
+<msg timestamp="20200131 15:57:37.441" level="INFO">Clicking element 'css:div.online &gt; div:nth-child(4) &gt; button'.</msg>
+<status status="PASS" starttime="20200131 15:57:37.441" endtime="20200131 15:57:37.490"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:57:37.441" endtime="20200131 15:57:37.490"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200131 15:57:40.491" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200131 15:57:37.490" endtime="20200131 15:57:40.491"></status>
+</kw>
+<kw name="Do Turns">
+<kw name="${i} IN RANGE [ 999 ]" type="for">
+<kw name="${i} = 0" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200131 15:57:41.497" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200131 15:57:40.494" endtime="20200131 15:57:41.497"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let gameover = document.querySelector('.screen-entity-gameover');</arg>
+<arg>if (gameover !== null) return true;</arg>
+<arg>return false;</arg>
+</arguments>
+<assign>
+<var>${gameover}</var>
+</assign>
+<msg timestamp="20200131 15:57:41.499" level="INFO">Executing JavaScript:
+let gameover = document.querySelector('.screen-entity-gameover');if (gameover !== null) return true;return false;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:57:41.514" level="INFO">${gameover} = False</msg>
+<status status="PASS" starttime="20200131 15:57:41.498" endtime="20200131 15:57:41.514"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${gameover} == True</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:57:41.514" endtime="20200131 15:57:41.514"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerText</arg>
+</arguments>
+<assign>
+<var>${playerInTurn}</var>
+</assign>
+<msg timestamp="20200131 15:57:41.542" level="INFO">${playerInTurn} = Veera</msg>
+<status status="PASS" starttime="20200131 15:57:41.515" endtime="20200131 15:57:41.542"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${playerInTurn}</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:57:41.542" endtime="20200131 15:57:41.543"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${playerInTurn}' != '${robotUser}'</arg>
+</arguments>
+<msg timestamp="20200131 15:57:41.543" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20200131 15:57:41.543" endtime="20200131 15:57:41.543"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:57:40.493" endtime="20200131 15:57:41.543"></status>
+</kw>
+<kw name="${i} = 1" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200131 15:57:42.544" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200131 15:57:41.544" endtime="20200131 15:57:42.544"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let gameover = document.querySelector('.screen-entity-gameover');</arg>
+<arg>if (gameover !== null) return true;</arg>
+<arg>return false;</arg>
+</arguments>
+<assign>
+<var>${gameover}</var>
+</assign>
+<msg timestamp="20200131 15:57:42.545" level="INFO">Executing JavaScript:
+let gameover = document.querySelector('.screen-entity-gameover');if (gameover !== null) return true;return false;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:57:42.552" level="INFO">${gameover} = False</msg>
+<status status="PASS" starttime="20200131 15:57:42.544" endtime="20200131 15:57:42.552"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${gameover} == True</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:57:42.553" endtime="20200131 15:57:42.553"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerText</arg>
+</arguments>
+<assign>
+<var>${playerInTurn}</var>
+</assign>
+<msg timestamp="20200131 15:57:42.575" level="INFO">${playerInTurn} = Veera</msg>
+<status status="PASS" starttime="20200131 15:57:42.553" endtime="20200131 15:57:42.575"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${playerInTurn}</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:57:42.575" endtime="20200131 15:57:42.577"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${playerInTurn}' != '${robotUser}'</arg>
+</arguments>
+<msg timestamp="20200131 15:57:42.577" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20200131 15:57:42.577" endtime="20200131 15:57:42.577"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:57:41.543" endtime="20200131 15:57:42.577"></status>
+</kw>
+<kw name="${i} = 2" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200131 15:57:43.578" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200131 15:57:42.577" endtime="20200131 15:57:43.578"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let gameover = document.querySelector('.screen-entity-gameover');</arg>
+<arg>if (gameover !== null) return true;</arg>
+<arg>return false;</arg>
+</arguments>
+<assign>
+<var>${gameover}</var>
+</assign>
+<msg timestamp="20200131 15:57:43.578" level="INFO">Executing JavaScript:
+let gameover = document.querySelector('.screen-entity-gameover');if (gameover !== null) return true;return false;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:57:43.584" level="INFO">${gameover} = False</msg>
+<status status="PASS" starttime="20200131 15:57:43.578" endtime="20200131 15:57:43.584"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${gameover} == True</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:57:43.584" endtime="20200131 15:57:43.584"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerText</arg>
+</arguments>
+<assign>
+<var>${playerInTurn}</var>
+</assign>
+<msg timestamp="20200131 15:57:43.597" level="INFO">${playerInTurn} = Veera</msg>
+<status status="PASS" starttime="20200131 15:57:43.585" endtime="20200131 15:57:43.597"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${playerInTurn}</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:57:43.597" endtime="20200131 15:57:43.598"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${playerInTurn}' != '${robotUser}'</arg>
+</arguments>
+<msg timestamp="20200131 15:57:43.598" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20200131 15:57:43.598" endtime="20200131 15:57:43.598"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:57:42.577" endtime="20200131 15:57:43.598"></status>
+</kw>
+<kw name="${i} = 3" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200131 15:57:44.600" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200131 15:57:43.599" endtime="20200131 15:57:44.600"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let gameover = document.querySelector('.screen-entity-gameover');</arg>
+<arg>if (gameover !== null) return true;</arg>
+<arg>return false;</arg>
+</arguments>
+<assign>
+<var>${gameover}</var>
+</assign>
+<msg timestamp="20200131 15:57:44.600" level="INFO">Executing JavaScript:
+let gameover = document.querySelector('.screen-entity-gameover');if (gameover !== null) return true;return false;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:57:44.606" level="INFO">${gameover} = False</msg>
+<status status="PASS" starttime="20200131 15:57:44.600" endtime="20200131 15:57:44.606"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${gameover} == True</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:57:44.606" endtime="20200131 15:57:44.606"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerText</arg>
+</arguments>
+<assign>
+<var>${playerInTurn}</var>
+</assign>
+<msg timestamp="20200131 15:57:44.621" level="INFO">${playerInTurn} = Sanni</msg>
+<status status="PASS" starttime="20200131 15:57:44.606" endtime="20200131 15:57:44.622"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${playerInTurn}</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:57:44.622" endtime="20200131 15:57:44.622"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${playerInTurn}' != '${robotUser}'</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:57:44.622" endtime="20200131 15:57:44.623"></status>
+</kw>
+<kw name="Turn One Card">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let cards = [];</arg>
+<arg>document.querySelectorAll("div.board span.card &gt; label &gt; i").forEach((elem, i) =&gt; {</arg>
+<arg>let labelElem = elem.parentElement;</arg>
+<arg>if (labelElem.className === "facedown") cards.push({classes:elem.className, position:i});</arg>
+<arg>});</arg>
+<arg>cards = cards.sort((a, b) =&gt; a.classes.localeCompare(b.classes));</arg>
+<arg>console.log("Turn One Card", cards);</arg>
+<arg>return cards;</arg>
+</arguments>
+<assign>
+<var>@{cards facedown}</var>
+</assign>
+<msg timestamp="20200131 15:57:44.625" level="INFO">Executing JavaScript:
+let cards = [];document.querySelectorAll("div.board span.card &gt; label &gt; i").forEach((elem, i) =&gt; {let labelElem = elem.parentElement;if (labelElem.className === "facedown") cards.push({classes:elem.className, position:i});});cards = cards.sort((a, b) =&gt; a.classes.localeCompare(b.classes));console.log("Turn One Card", cards);return cards;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:57:44.637" level="INFO">@{cards facedown} = [ {'classes': 'fa fa-android', 'position': 3} | {'classes': 'fa fa-android', 'position': 6} | {'classes': 'fa fa-fort-awesome', 'position': 2} | {'classes': 'fa fa-fort-awesome', 'position': 5} | {'cl...</msg>
+<status status="PASS" starttime="20200131 15:57:44.623" endtime="20200131 15:57:44.637"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${base}</var>
+</assign>
+<msg timestamp="20200131 15:57:44.637" level="INFO">${base} = 3</msg>
+<status status="PASS" starttime="20200131 15:57:44.637" endtime="20200131 15:57:44.637"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${base} + ${cards facedown}[0][position]</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200131 15:57:44.638" level="INFO">${nthchild} = 6</msg>
+<status status="PASS" starttime="20200131 15:57:44.637" endtime="20200131 15:57:44.638"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${nthchild}</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200131 15:57:44.638" level="INFO">${nthchild} = 6</msg>
+<status status="PASS" starttime="20200131 15:57:44.638" endtime="20200131 15:57:44.638"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>div.board &gt; span &gt; span:nth-child(${nthchild})</arg>
+</arguments>
+<assign>
+<var>${cardSelector}</var>
+</assign>
+<msg timestamp="20200131 15:57:44.638" level="INFO">${cardSelector} = div.board &gt; span &gt; span:nth-child(6)</msg>
+<status status="PASS" starttime="20200131 15:57:44.638" endtime="20200131 15:57:44.638"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${cardSelector}</arg>
+</arguments>
+<msg timestamp="20200131 15:57:44.639" level="INFO">Clicking element 'css:div.board &gt; span &gt; span:nth-child(6)'.</msg>
+<status status="PASS" starttime="20200131 15:57:44.638" endtime="20200131 15:57:44.692"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20200131 15:57:49.705" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20200131 15:57:44.692" endtime="20200131 15:57:49.705"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:57:44.623" endtime="20200131 15:57:49.705"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:57:43.599" endtime="20200131 15:57:49.705"></status>
+</kw>
+<kw name="${i} = 4" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200131 15:57:50.706" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200131 15:57:49.705" endtime="20200131 15:57:50.706"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let gameover = document.querySelector('.screen-entity-gameover');</arg>
+<arg>if (gameover !== null) return true;</arg>
+<arg>return false;</arg>
+</arguments>
+<assign>
+<var>${gameover}</var>
+</assign>
+<msg timestamp="20200131 15:57:50.707" level="INFO">Executing JavaScript:
+let gameover = document.querySelector('.screen-entity-gameover');if (gameover !== null) return true;return false;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:57:50.718" level="INFO">${gameover} = False</msg>
+<status status="PASS" starttime="20200131 15:57:50.706" endtime="20200131 15:57:50.718"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${gameover} == True</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:57:50.718" endtime="20200131 15:57:50.719"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerText</arg>
+</arguments>
+<assign>
+<var>${playerInTurn}</var>
+</assign>
+<msg timestamp="20200131 15:57:50.735" level="INFO">${playerInTurn} = Sanni</msg>
+<status status="PASS" starttime="20200131 15:57:50.719" endtime="20200131 15:57:50.735"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${playerInTurn}</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:57:50.735" endtime="20200131 15:57:50.735"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${playerInTurn}' != '${robotUser}'</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:57:50.735" endtime="20200131 15:57:50.744"></status>
+</kw>
+<kw name="Turn One Card">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let cards = [];</arg>
+<arg>document.querySelectorAll("div.board span.card &gt; label &gt; i").forEach((elem, i) =&gt; {</arg>
+<arg>let labelElem = elem.parentElement;</arg>
+<arg>if (labelElem.className === "facedown") cards.push({classes:elem.className, position:i});</arg>
+<arg>});</arg>
+<arg>cards = cards.sort((a, b) =&gt; a.classes.localeCompare(b.classes));</arg>
+<arg>console.log("Turn One Card", cards);</arg>
+<arg>return cards;</arg>
+</arguments>
+<assign>
+<var>@{cards facedown}</var>
+</assign>
+<msg timestamp="20200131 15:57:50.745" level="INFO">Executing JavaScript:
+let cards = [];document.querySelectorAll("div.board span.card &gt; label &gt; i").forEach((elem, i) =&gt; {let labelElem = elem.parentElement;if (labelElem.className === "facedown") cards.push({classes:elem.className, position:i});});cards = cards.sort((a, b) =&gt; a.classes.localeCompare(b.classes));console.log("Turn One Card", cards);return cards;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:57:50.753" level="INFO">@{cards facedown} = [ {'classes': 'fa fa-android', 'position': 6} | {'classes': 'fa fa-fort-awesome', 'position': 2} | {'classes': 'fa fa-fort-awesome', 'position': 5} | {'classes': 'fa fa-github', 'position': 4} | {'cla...</msg>
+<status status="PASS" starttime="20200131 15:57:50.744" endtime="20200131 15:57:50.753"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${base}</var>
+</assign>
+<msg timestamp="20200131 15:57:50.754" level="INFO">${base} = 3</msg>
+<status status="PASS" starttime="20200131 15:57:50.753" endtime="20200131 15:57:50.754"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${base} + ${cards facedown}[0][position]</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200131 15:57:50.755" level="INFO">${nthchild} = 9</msg>
+<status status="PASS" starttime="20200131 15:57:50.754" endtime="20200131 15:57:50.755"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${nthchild}</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200131 15:57:50.755" level="INFO">${nthchild} = 9</msg>
+<status status="PASS" starttime="20200131 15:57:50.755" endtime="20200131 15:57:50.755"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>div.board &gt; span &gt; span:nth-child(${nthchild})</arg>
+</arguments>
+<assign>
+<var>${cardSelector}</var>
+</assign>
+<msg timestamp="20200131 15:57:50.756" level="INFO">${cardSelector} = div.board &gt; span &gt; span:nth-child(9)</msg>
+<status status="PASS" starttime="20200131 15:57:50.755" endtime="20200131 15:57:50.756"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${cardSelector}</arg>
+</arguments>
+<msg timestamp="20200131 15:57:50.756" level="INFO">Clicking element 'css:div.board &gt; span &gt; span:nth-child(9)'.</msg>
+<status status="PASS" starttime="20200131 15:57:50.756" endtime="20200131 15:57:50.804"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20200131 15:57:55.805" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20200131 15:57:50.804" endtime="20200131 15:57:55.805"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:57:50.744" endtime="20200131 15:57:55.806"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:57:49.705" endtime="20200131 15:57:55.806"></status>
+</kw>
+<kw name="${i} = 5" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200131 15:57:56.808" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200131 15:57:55.807" endtime="20200131 15:57:56.808"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let gameover = document.querySelector('.screen-entity-gameover');</arg>
+<arg>if (gameover !== null) return true;</arg>
+<arg>return false;</arg>
+</arguments>
+<assign>
+<var>${gameover}</var>
+</assign>
+<msg timestamp="20200131 15:57:56.809" level="INFO">Executing JavaScript:
+let gameover = document.querySelector('.screen-entity-gameover');if (gameover !== null) return true;return false;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:57:56.816" level="INFO">${gameover} = False</msg>
+<status status="PASS" starttime="20200131 15:57:56.808" endtime="20200131 15:57:56.816"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${gameover} == True</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:57:56.816" endtime="20200131 15:57:56.817"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerText</arg>
+</arguments>
+<assign>
+<var>${playerInTurn}</var>
+</assign>
+<msg timestamp="20200131 15:57:56.837" level="INFO">${playerInTurn} = Sanni</msg>
+<status status="PASS" starttime="20200131 15:57:56.817" endtime="20200131 15:57:56.837"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${playerInTurn}</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:57:56.837" endtime="20200131 15:57:56.838"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${playerInTurn}' != '${robotUser}'</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:57:56.838" endtime="20200131 15:57:56.839"></status>
+</kw>
+<kw name="Turn One Card">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let cards = [];</arg>
+<arg>document.querySelectorAll("div.board span.card &gt; label &gt; i").forEach((elem, i) =&gt; {</arg>
+<arg>let labelElem = elem.parentElement;</arg>
+<arg>if (labelElem.className === "facedown") cards.push({classes:elem.className, position:i});</arg>
+<arg>});</arg>
+<arg>cards = cards.sort((a, b) =&gt; a.classes.localeCompare(b.classes));</arg>
+<arg>console.log("Turn One Card", cards);</arg>
+<arg>return cards;</arg>
+</arguments>
+<assign>
+<var>@{cards facedown}</var>
+</assign>
+<msg timestamp="20200131 15:57:56.840" level="INFO">Executing JavaScript:
+let cards = [];document.querySelectorAll("div.board span.card &gt; label &gt; i").forEach((elem, i) =&gt; {let labelElem = elem.parentElement;if (labelElem.className === "facedown") cards.push({classes:elem.className, position:i});});cards = cards.sort((a, b) =&gt; a.classes.localeCompare(b.classes));console.log("Turn One Card", cards);return cards;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:57:56.848" level="INFO">@{cards facedown} = [ {'classes': 'fa fa-fort-awesome', 'position': 2} | {'classes': 'fa fa-fort-awesome', 'position': 5} | {'classes': 'fa fa-github', 'position': 4} | {'classes': 'fa fa-github', 'position': 9} | {'clas...</msg>
+<status status="PASS" starttime="20200131 15:57:56.839" endtime="20200131 15:57:56.848"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${base}</var>
+</assign>
+<msg timestamp="20200131 15:57:56.849" level="INFO">${base} = 3</msg>
+<status status="PASS" starttime="20200131 15:57:56.849" endtime="20200131 15:57:56.849"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${base} + ${cards facedown}[0][position]</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200131 15:57:56.850" level="INFO">${nthchild} = 5</msg>
+<status status="PASS" starttime="20200131 15:57:56.850" endtime="20200131 15:57:56.850"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${nthchild}</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200131 15:57:56.851" level="INFO">${nthchild} = 5</msg>
+<status status="PASS" starttime="20200131 15:57:56.851" endtime="20200131 15:57:56.851"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>div.board &gt; span &gt; span:nth-child(${nthchild})</arg>
+</arguments>
+<assign>
+<var>${cardSelector}</var>
+</assign>
+<msg timestamp="20200131 15:57:56.852" level="INFO">${cardSelector} = div.board &gt; span &gt; span:nth-child(5)</msg>
+<status status="PASS" starttime="20200131 15:57:56.851" endtime="20200131 15:57:56.852"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${cardSelector}</arg>
+</arguments>
+<msg timestamp="20200131 15:57:56.852" level="INFO">Clicking element 'css:div.board &gt; span &gt; span:nth-child(5)'.</msg>
+<status status="PASS" starttime="20200131 15:57:56.852" endtime="20200131 15:57:56.900"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20200131 15:58:01.901" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20200131 15:57:56.900" endtime="20200131 15:58:01.901"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:57:56.839" endtime="20200131 15:58:01.902"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:57:55.806" endtime="20200131 15:58:01.902"></status>
+</kw>
+<kw name="${i} = 6" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200131 15:58:02.905" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200131 15:58:01.902" endtime="20200131 15:58:02.905"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let gameover = document.querySelector('.screen-entity-gameover');</arg>
+<arg>if (gameover !== null) return true;</arg>
+<arg>return false;</arg>
+</arguments>
+<assign>
+<var>${gameover}</var>
+</assign>
+<msg timestamp="20200131 15:58:02.905" level="INFO">Executing JavaScript:
+let gameover = document.querySelector('.screen-entity-gameover');if (gameover !== null) return true;return false;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:58:02.911" level="INFO">${gameover} = False</msg>
+<status status="PASS" starttime="20200131 15:58:02.905" endtime="20200131 15:58:02.911"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${gameover} == True</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:02.911" endtime="20200131 15:58:02.912"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerText</arg>
+</arguments>
+<assign>
+<var>${playerInTurn}</var>
+</assign>
+<msg timestamp="20200131 15:58:02.926" level="INFO">${playerInTurn} = Sanni</msg>
+<status status="PASS" starttime="20200131 15:58:02.912" endtime="20200131 15:58:02.926"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${playerInTurn}</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:02.927" endtime="20200131 15:58:02.927"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${playerInTurn}' != '${robotUser}'</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:02.927" endtime="20200131 15:58:02.928"></status>
+</kw>
+<kw name="Turn One Card">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let cards = [];</arg>
+<arg>document.querySelectorAll("div.board span.card &gt; label &gt; i").forEach((elem, i) =&gt; {</arg>
+<arg>let labelElem = elem.parentElement;</arg>
+<arg>if (labelElem.className === "facedown") cards.push({classes:elem.className, position:i});</arg>
+<arg>});</arg>
+<arg>cards = cards.sort((a, b) =&gt; a.classes.localeCompare(b.classes));</arg>
+<arg>console.log("Turn One Card", cards);</arg>
+<arg>return cards;</arg>
+</arguments>
+<assign>
+<var>@{cards facedown}</var>
+</assign>
+<msg timestamp="20200131 15:58:02.930" level="INFO">Executing JavaScript:
+let cards = [];document.querySelectorAll("div.board span.card &gt; label &gt; i").forEach((elem, i) =&gt; {let labelElem = elem.parentElement;if (labelElem.className === "facedown") cards.push({classes:elem.className, position:i});});cards = cards.sort((a, b) =&gt; a.classes.localeCompare(b.classes));console.log("Turn One Card", cards);return cards;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:58:02.938" level="INFO">@{cards facedown} = [ {'classes': 'fa fa-fort-awesome', 'position': 5} | {'classes': 'fa fa-github', 'position': 4} | {'classes': 'fa fa-github', 'position': 9} | {'classes': 'fa fa-youtube-play', 'position': 7} | {'clas...</msg>
+<status status="PASS" starttime="20200131 15:58:02.929" endtime="20200131 15:58:02.938"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${base}</var>
+</assign>
+<msg timestamp="20200131 15:58:02.938" level="INFO">${base} = 3</msg>
+<status status="PASS" starttime="20200131 15:58:02.938" endtime="20200131 15:58:02.938"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${base} + ${cards facedown}[0][position]</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200131 15:58:02.939" level="INFO">${nthchild} = 8</msg>
+<status status="PASS" starttime="20200131 15:58:02.938" endtime="20200131 15:58:02.939"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${nthchild}</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200131 15:58:02.939" level="INFO">${nthchild} = 8</msg>
+<status status="PASS" starttime="20200131 15:58:02.939" endtime="20200131 15:58:02.939"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>div.board &gt; span &gt; span:nth-child(${nthchild})</arg>
+</arguments>
+<assign>
+<var>${cardSelector}</var>
+</assign>
+<msg timestamp="20200131 15:58:02.939" level="INFO">${cardSelector} = div.board &gt; span &gt; span:nth-child(8)</msg>
+<status status="PASS" starttime="20200131 15:58:02.939" endtime="20200131 15:58:02.939"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${cardSelector}</arg>
+</arguments>
+<msg timestamp="20200131 15:58:02.940" level="INFO">Clicking element 'css:div.board &gt; span &gt; span:nth-child(8)'.</msg>
+<status status="PASS" starttime="20200131 15:58:02.939" endtime="20200131 15:58:02.993"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20200131 15:58:07.994" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20200131 15:58:02.994" endtime="20200131 15:58:07.994"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:58:02.928" endtime="20200131 15:58:07.995"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:58:01.902" endtime="20200131 15:58:07.995"></status>
+</kw>
+<kw name="${i} = 7" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200131 15:58:08.997" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200131 15:58:07.995" endtime="20200131 15:58:08.997"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let gameover = document.querySelector('.screen-entity-gameover');</arg>
+<arg>if (gameover !== null) return true;</arg>
+<arg>return false;</arg>
+</arguments>
+<assign>
+<var>${gameover}</var>
+</assign>
+<msg timestamp="20200131 15:58:08.998" level="INFO">Executing JavaScript:
+let gameover = document.querySelector('.screen-entity-gameover');if (gameover !== null) return true;return false;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:58:09.009" level="INFO">${gameover} = False</msg>
+<status status="PASS" starttime="20200131 15:58:08.997" endtime="20200131 15:58:09.009"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${gameover} == True</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:09.009" endtime="20200131 15:58:09.010"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerText</arg>
+</arguments>
+<assign>
+<var>${playerInTurn}</var>
+</assign>
+<msg timestamp="20200131 15:58:09.037" level="INFO">${playerInTurn} = Sanni</msg>
+<status status="PASS" starttime="20200131 15:58:09.010" endtime="20200131 15:58:09.037"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${playerInTurn}</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:09.038" endtime="20200131 15:58:09.038"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${playerInTurn}' != '${robotUser}'</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:09.038" endtime="20200131 15:58:09.039"></status>
+</kw>
+<kw name="Turn One Card">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let cards = [];</arg>
+<arg>document.querySelectorAll("div.board span.card &gt; label &gt; i").forEach((elem, i) =&gt; {</arg>
+<arg>let labelElem = elem.parentElement;</arg>
+<arg>if (labelElem.className === "facedown") cards.push({classes:elem.className, position:i});</arg>
+<arg>});</arg>
+<arg>cards = cards.sort((a, b) =&gt; a.classes.localeCompare(b.classes));</arg>
+<arg>console.log("Turn One Card", cards);</arg>
+<arg>return cards;</arg>
+</arguments>
+<assign>
+<var>@{cards facedown}</var>
+</assign>
+<msg timestamp="20200131 15:58:09.040" level="INFO">Executing JavaScript:
+let cards = [];document.querySelectorAll("div.board span.card &gt; label &gt; i").forEach((elem, i) =&gt; {let labelElem = elem.parentElement;if (labelElem.className === "facedown") cards.push({classes:elem.className, position:i});});cards = cards.sort((a, b) =&gt; a.classes.localeCompare(b.classes));console.log("Turn One Card", cards);return cards;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:58:09.050" level="INFO">@{cards facedown} = [ {'classes': 'fa fa-github', 'position': 4} | {'classes': 'fa fa-github', 'position': 9} | {'classes': 'fa fa-youtube-play', 'position': 7} | {'classes': 'fa fa-youtube-play', 'position': 8} ]</msg>
+<status status="PASS" starttime="20200131 15:58:09.039" endtime="20200131 15:58:09.050"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${base}</var>
+</assign>
+<msg timestamp="20200131 15:58:09.051" level="INFO">${base} = 3</msg>
+<status status="PASS" starttime="20200131 15:58:09.051" endtime="20200131 15:58:09.051"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${base} + ${cards facedown}[0][position]</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200131 15:58:09.052" level="INFO">${nthchild} = 7</msg>
+<status status="PASS" starttime="20200131 15:58:09.052" endtime="20200131 15:58:09.052"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${nthchild}</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200131 15:58:09.052" level="INFO">${nthchild} = 7</msg>
+<status status="PASS" starttime="20200131 15:58:09.052" endtime="20200131 15:58:09.052"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>div.board &gt; span &gt; span:nth-child(${nthchild})</arg>
+</arguments>
+<assign>
+<var>${cardSelector}</var>
+</assign>
+<msg timestamp="20200131 15:58:09.053" level="INFO">${cardSelector} = div.board &gt; span &gt; span:nth-child(7)</msg>
+<status status="PASS" starttime="20200131 15:58:09.052" endtime="20200131 15:58:09.053"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${cardSelector}</arg>
+</arguments>
+<msg timestamp="20200131 15:58:09.053" level="INFO">Clicking element 'css:div.board &gt; span &gt; span:nth-child(7)'.</msg>
+<status status="PASS" starttime="20200131 15:58:09.053" endtime="20200131 15:58:09.101"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20200131 15:58:14.102" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20200131 15:58:09.102" endtime="20200131 15:58:14.102"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:58:09.039" endtime="20200131 15:58:14.103"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:58:07.995" endtime="20200131 15:58:14.103"></status>
+</kw>
+<kw name="${i} = 8" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200131 15:58:15.105" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200131 15:58:14.103" endtime="20200131 15:58:15.105"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let gameover = document.querySelector('.screen-entity-gameover');</arg>
+<arg>if (gameover !== null) return true;</arg>
+<arg>return false;</arg>
+</arguments>
+<assign>
+<var>${gameover}</var>
+</assign>
+<msg timestamp="20200131 15:58:15.106" level="INFO">Executing JavaScript:
+let gameover = document.querySelector('.screen-entity-gameover');if (gameover !== null) return true;return false;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:58:15.115" level="INFO">${gameover} = False</msg>
+<status status="PASS" starttime="20200131 15:58:15.105" endtime="20200131 15:58:15.115"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${gameover} == True</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:15.116" endtime="20200131 15:58:15.116"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerText</arg>
+</arguments>
+<assign>
+<var>${playerInTurn}</var>
+</assign>
+<msg timestamp="20200131 15:58:15.139" level="INFO">${playerInTurn} = Sanni</msg>
+<status status="PASS" starttime="20200131 15:58:15.116" endtime="20200131 15:58:15.139"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${playerInTurn}</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:15.140" endtime="20200131 15:58:15.140"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${playerInTurn}' != '${robotUser}'</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:15.140" endtime="20200131 15:58:15.141"></status>
+</kw>
+<kw name="Turn One Card">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let cards = [];</arg>
+<arg>document.querySelectorAll("div.board span.card &gt; label &gt; i").forEach((elem, i) =&gt; {</arg>
+<arg>let labelElem = elem.parentElement;</arg>
+<arg>if (labelElem.className === "facedown") cards.push({classes:elem.className, position:i});</arg>
+<arg>});</arg>
+<arg>cards = cards.sort((a, b) =&gt; a.classes.localeCompare(b.classes));</arg>
+<arg>console.log("Turn One Card", cards);</arg>
+<arg>return cards;</arg>
+</arguments>
+<assign>
+<var>@{cards facedown}</var>
+</assign>
+<msg timestamp="20200131 15:58:15.143" level="INFO">Executing JavaScript:
+let cards = [];document.querySelectorAll("div.board span.card &gt; label &gt; i").forEach((elem, i) =&gt; {let labelElem = elem.parentElement;if (labelElem.className === "facedown") cards.push({classes:elem.className, position:i});});cards = cards.sort((a, b) =&gt; a.classes.localeCompare(b.classes));console.log("Turn One Card", cards);return cards;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:58:15.152" level="INFO">@{cards facedown} = [ {'classes': 'fa fa-github', 'position': 9} | {'classes': 'fa fa-youtube-play', 'position': 7} | {'classes': 'fa fa-youtube-play', 'position': 8} ]</msg>
+<status status="PASS" starttime="20200131 15:58:15.142" endtime="20200131 15:58:15.153"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${base}</var>
+</assign>
+<msg timestamp="20200131 15:58:15.153" level="INFO">${base} = 3</msg>
+<status status="PASS" starttime="20200131 15:58:15.153" endtime="20200131 15:58:15.153"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${base} + ${cards facedown}[0][position]</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200131 15:58:15.154" level="INFO">${nthchild} = 12</msg>
+<status status="PASS" starttime="20200131 15:58:15.154" endtime="20200131 15:58:15.154"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${nthchild}</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200131 15:58:15.154" level="INFO">${nthchild} = 12</msg>
+<status status="PASS" starttime="20200131 15:58:15.154" endtime="20200131 15:58:15.155"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>div.board &gt; span &gt; span:nth-child(${nthchild})</arg>
+</arguments>
+<assign>
+<var>${cardSelector}</var>
+</assign>
+<msg timestamp="20200131 15:58:15.155" level="INFO">${cardSelector} = div.board &gt; span &gt; span:nth-child(12)</msg>
+<status status="PASS" starttime="20200131 15:58:15.155" endtime="20200131 15:58:15.155"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${cardSelector}</arg>
+</arguments>
+<msg timestamp="20200131 15:58:15.155" level="INFO">Clicking element 'css:div.board &gt; span &gt; span:nth-child(12)'.</msg>
+<status status="PASS" starttime="20200131 15:58:15.155" endtime="20200131 15:58:15.202"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20200131 15:58:20.204" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20200131 15:58:15.202" endtime="20200131 15:58:20.204"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:58:15.141" endtime="20200131 15:58:20.204"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:58:14.103" endtime="20200131 15:58:20.204"></status>
+</kw>
+<kw name="${i} = 9" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200131 15:58:21.204" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200131 15:58:20.204" endtime="20200131 15:58:21.204"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let gameover = document.querySelector('.screen-entity-gameover');</arg>
+<arg>if (gameover !== null) return true;</arg>
+<arg>return false;</arg>
+</arguments>
+<assign>
+<var>${gameover}</var>
+</assign>
+<msg timestamp="20200131 15:58:21.206" level="INFO">Executing JavaScript:
+let gameover = document.querySelector('.screen-entity-gameover');if (gameover !== null) return true;return false;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:58:21.215" level="INFO">${gameover} = True</msg>
+<status status="PASS" starttime="20200131 15:58:21.204" endtime="20200131 15:58:21.216"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${gameover} == True</arg>
+</arguments>
+<msg timestamp="20200131 15:58:21.216" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20200131 15:58:21.216" endtime="20200131 15:58:21.217"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:58:20.204" endtime="20200131 15:58:21.217"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:57:40.493" endtime="20200131 15:58:21.217"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:57:40.492" endtime="20200131 15:58:21.217"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:body &gt; div &gt; span &gt; div &gt; span &gt; button</arg>
+</arguments>
+<msg timestamp="20200131 15:58:21.218" level="INFO">Clicking element 'css:body &gt; div &gt; span &gt; div &gt; span &gt; button'.</msg>
+<status status="PASS" starttime="20200131 15:58:21.217" endtime="20200131 15:58:21.282"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:57:34.409" endtime="20200131 15:58:21.282"></status>
+</kw>
+<kw name="${i} = 1" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+<arg>Let browser render the page</arg>
+</arguments>
+<msg timestamp="20200131 15:58:24.284" level="INFO">Slept 3 seconds</msg>
+<msg timestamp="20200131 15:58:24.284" level="INFO">Let browser render the page</msg>
+<status status="PASS" starttime="20200131 15:58:21.282" endtime="20200131 15:58:24.284"></status>
+</kw>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<arguments>
+<arg>css:body &gt; div &gt; span &gt; div &gt; span &gt; div.online &gt; div:nth-child(4)</arg>
+<arg>???</arg>
+<arg>10min</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:24.285" endtime="20200131 15:58:29.607"></status>
+</kw>
+<kw name="Join Game">
+<arguments>
+<arg>${first-game}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${game}</arg>
+</arguments>
+<msg timestamp="20200131 15:58:29.608" level="INFO">Clicking element 'css:div.online &gt; div:nth-child(4) &gt; button'.</msg>
+<status status="PASS" starttime="20200131 15:58:29.608" endtime="20200131 15:58:29.649"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:58:29.607" endtime="20200131 15:58:29.649"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200131 15:58:32.650" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200131 15:58:29.649" endtime="20200131 15:58:32.650"></status>
+</kw>
+<kw name="Do Turns">
+<kw name="${i} IN RANGE [ 999 ]" type="for">
+<kw name="${i} = 0" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200131 15:58:33.654" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200131 15:58:32.653" endtime="20200131 15:58:33.655"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let gameover = document.querySelector('.screen-entity-gameover');</arg>
+<arg>if (gameover !== null) return true;</arg>
+<arg>return false;</arg>
+</arguments>
+<assign>
+<var>${gameover}</var>
+</assign>
+<msg timestamp="20200131 15:58:33.656" level="INFO">Executing JavaScript:
+let gameover = document.querySelector('.screen-entity-gameover');if (gameover !== null) return true;return false;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:58:33.662" level="INFO">${gameover} = False</msg>
+<status status="PASS" starttime="20200131 15:58:33.655" endtime="20200131 15:58:33.662"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${gameover} == True</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:33.662" endtime="20200131 15:58:33.663"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerText</arg>
+</arguments>
+<assign>
+<var>${playerInTurn}</var>
+</assign>
+<msg timestamp="20200131 15:58:33.676" level="INFO">${playerInTurn} = Veera</msg>
+<status status="PASS" starttime="20200131 15:58:33.663" endtime="20200131 15:58:33.676"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${playerInTurn}</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:33.676" endtime="20200131 15:58:33.677"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${playerInTurn}' != '${robotUser}'</arg>
+</arguments>
+<msg timestamp="20200131 15:58:33.677" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20200131 15:58:33.677" endtime="20200131 15:58:33.677"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:58:32.652" endtime="20200131 15:58:33.677"></status>
+</kw>
+<kw name="${i} = 1" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200131 15:58:34.678" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200131 15:58:33.677" endtime="20200131 15:58:34.678"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let gameover = document.querySelector('.screen-entity-gameover');</arg>
+<arg>if (gameover !== null) return true;</arg>
+<arg>return false;</arg>
+</arguments>
+<assign>
+<var>${gameover}</var>
+</assign>
+<msg timestamp="20200131 15:58:34.680" level="INFO">Executing JavaScript:
+let gameover = document.querySelector('.screen-entity-gameover');if (gameover !== null) return true;return false;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:58:34.685" level="INFO">${gameover} = False</msg>
+<status status="PASS" starttime="20200131 15:58:34.679" endtime="20200131 15:58:34.685"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${gameover} == True</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:34.686" endtime="20200131 15:58:34.686"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerText</arg>
+</arguments>
+<assign>
+<var>${playerInTurn}</var>
+</assign>
+<msg timestamp="20200131 15:58:34.699" level="INFO">${playerInTurn} = Veera</msg>
+<status status="PASS" starttime="20200131 15:58:34.686" endtime="20200131 15:58:34.699"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${playerInTurn}</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:34.699" endtime="20200131 15:58:34.700"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${playerInTurn}' != '${robotUser}'</arg>
+</arguments>
+<msg timestamp="20200131 15:58:34.700" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20200131 15:58:34.700" endtime="20200131 15:58:34.700"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:58:33.677" endtime="20200131 15:58:34.700"></status>
+</kw>
+<kw name="${i} = 2" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200131 15:58:35.701" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200131 15:58:34.700" endtime="20200131 15:58:35.701"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let gameover = document.querySelector('.screen-entity-gameover');</arg>
+<arg>if (gameover !== null) return true;</arg>
+<arg>return false;</arg>
+</arguments>
+<assign>
+<var>${gameover}</var>
+</assign>
+<msg timestamp="20200131 15:58:35.704" level="INFO">Executing JavaScript:
+let gameover = document.querySelector('.screen-entity-gameover');if (gameover !== null) return true;return false;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:58:35.710" level="INFO">${gameover} = False</msg>
+<status status="PASS" starttime="20200131 15:58:35.702" endtime="20200131 15:58:35.710"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${gameover} == True</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:35.710" endtime="20200131 15:58:35.711"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerText</arg>
+</arguments>
+<assign>
+<var>${playerInTurn}</var>
+</assign>
+<msg timestamp="20200131 15:58:35.724" level="INFO">${playerInTurn} = Veera</msg>
+<status status="PASS" starttime="20200131 15:58:35.711" endtime="20200131 15:58:35.724"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${playerInTurn}</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:35.724" endtime="20200131 15:58:35.725"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${playerInTurn}' != '${robotUser}'</arg>
+</arguments>
+<msg timestamp="20200131 15:58:35.725" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20200131 15:58:35.725" endtime="20200131 15:58:35.725"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:58:34.700" endtime="20200131 15:58:35.725"></status>
+</kw>
+<kw name="${i} = 3" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200131 15:58:36.726" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200131 15:58:35.725" endtime="20200131 15:58:36.726"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let gameover = document.querySelector('.screen-entity-gameover');</arg>
+<arg>if (gameover !== null) return true;</arg>
+<arg>return false;</arg>
+</arguments>
+<assign>
+<var>${gameover}</var>
+</assign>
+<msg timestamp="20200131 15:58:36.728" level="INFO">Executing JavaScript:
+let gameover = document.querySelector('.screen-entity-gameover');if (gameover !== null) return true;return false;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:58:36.735" level="INFO">${gameover} = False</msg>
+<status status="PASS" starttime="20200131 15:58:36.726" endtime="20200131 15:58:36.735"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${gameover} == True</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:36.735" endtime="20200131 15:58:36.735"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerText</arg>
+</arguments>
+<assign>
+<var>${playerInTurn}</var>
+</assign>
+<msg timestamp="20200131 15:58:36.759" level="INFO">${playerInTurn} = Veera</msg>
+<status status="PASS" starttime="20200131 15:58:36.735" endtime="20200131 15:58:36.759"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${playerInTurn}</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:36.759" endtime="20200131 15:58:36.760"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${playerInTurn}' != '${robotUser}'</arg>
+</arguments>
+<msg timestamp="20200131 15:58:36.760" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20200131 15:58:36.760" endtime="20200131 15:58:36.760"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:58:35.725" endtime="20200131 15:58:36.760"></status>
+</kw>
+<kw name="${i} = 4" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200131 15:58:37.762" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200131 15:58:36.761" endtime="20200131 15:58:37.762"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let gameover = document.querySelector('.screen-entity-gameover');</arg>
+<arg>if (gameover !== null) return true;</arg>
+<arg>return false;</arg>
+</arguments>
+<assign>
+<var>${gameover}</var>
+</assign>
+<msg timestamp="20200131 15:58:37.765" level="INFO">Executing JavaScript:
+let gameover = document.querySelector('.screen-entity-gameover');if (gameover !== null) return true;return false;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:58:37.770" level="INFO">${gameover} = False</msg>
+<status status="PASS" starttime="20200131 15:58:37.763" endtime="20200131 15:58:37.770"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${gameover} == True</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:37.770" endtime="20200131 15:58:37.771"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerText</arg>
+</arguments>
+<assign>
+<var>${playerInTurn}</var>
+</assign>
+<msg timestamp="20200131 15:58:37.784" level="INFO">${playerInTurn} = Veera</msg>
+<status status="PASS" starttime="20200131 15:58:37.771" endtime="20200131 15:58:37.784"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${playerInTurn}</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:37.784" endtime="20200131 15:58:37.785"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${playerInTurn}' != '${robotUser}'</arg>
+</arguments>
+<msg timestamp="20200131 15:58:37.785" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20200131 15:58:37.785" endtime="20200131 15:58:37.785"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:58:36.761" endtime="20200131 15:58:37.785"></status>
+</kw>
+<kw name="${i} = 5" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200131 15:58:38.787" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200131 15:58:37.785" endtime="20200131 15:58:38.787"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let gameover = document.querySelector('.screen-entity-gameover');</arg>
+<arg>if (gameover !== null) return true;</arg>
+<arg>return false;</arg>
+</arguments>
+<assign>
+<var>${gameover}</var>
+</assign>
+<msg timestamp="20200131 15:58:38.788" level="INFO">Executing JavaScript:
+let gameover = document.querySelector('.screen-entity-gameover');if (gameover !== null) return true;return false;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:58:38.793" level="INFO">${gameover} = False</msg>
+<status status="PASS" starttime="20200131 15:58:38.787" endtime="20200131 15:58:38.793"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${gameover} == True</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:38.793" endtime="20200131 15:58:38.793"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerText</arg>
+</arguments>
+<assign>
+<var>${playerInTurn}</var>
+</assign>
+<msg timestamp="20200131 15:58:38.807" level="INFO">${playerInTurn} = Veera</msg>
+<status status="PASS" starttime="20200131 15:58:38.793" endtime="20200131 15:58:38.807"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${playerInTurn}</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:38.807" endtime="20200131 15:58:38.807"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${playerInTurn}' != '${robotUser}'</arg>
+</arguments>
+<msg timestamp="20200131 15:58:38.808" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20200131 15:58:38.807" endtime="20200131 15:58:38.808"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:58:37.785" endtime="20200131 15:58:38.808"></status>
+</kw>
+<kw name="${i} = 6" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200131 15:58:39.809" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200131 15:58:38.808" endtime="20200131 15:58:39.809"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let gameover = document.querySelector('.screen-entity-gameover');</arg>
+<arg>if (gameover !== null) return true;</arg>
+<arg>return false;</arg>
+</arguments>
+<assign>
+<var>${gameover}</var>
+</assign>
+<msg timestamp="20200131 15:58:39.811" level="INFO">Executing JavaScript:
+let gameover = document.querySelector('.screen-entity-gameover');if (gameover !== null) return true;return false;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:58:39.827" level="INFO">${gameover} = False</msg>
+<status status="PASS" starttime="20200131 15:58:39.810" endtime="20200131 15:58:39.828"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${gameover} == True</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:39.828" endtime="20200131 15:58:39.830"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerText</arg>
+</arguments>
+<assign>
+<var>${playerInTurn}</var>
+</assign>
+<msg timestamp="20200131 15:58:39.852" level="INFO">${playerInTurn} = Veera</msg>
+<status status="PASS" starttime="20200131 15:58:39.830" endtime="20200131 15:58:39.852"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${playerInTurn}</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:39.852" endtime="20200131 15:58:39.853"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${playerInTurn}' != '${robotUser}'</arg>
+</arguments>
+<msg timestamp="20200131 15:58:39.854" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20200131 15:58:39.853" endtime="20200131 15:58:39.854"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:58:38.808" endtime="20200131 15:58:39.854"></status>
+</kw>
+<kw name="${i} = 7" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200131 15:58:40.855" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200131 15:58:39.854" endtime="20200131 15:58:40.856"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let gameover = document.querySelector('.screen-entity-gameover');</arg>
+<arg>if (gameover !== null) return true;</arg>
+<arg>return false;</arg>
+</arguments>
+<assign>
+<var>${gameover}</var>
+</assign>
+<msg timestamp="20200131 15:58:40.859" level="INFO">Executing JavaScript:
+let gameover = document.querySelector('.screen-entity-gameover');if (gameover !== null) return true;return false;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:58:40.873" level="INFO">${gameover} = False</msg>
+<status status="PASS" starttime="20200131 15:58:40.857" endtime="20200131 15:58:40.873"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${gameover} == True</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:40.874" endtime="20200131 15:58:40.875"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerText</arg>
+</arguments>
+<assign>
+<var>${playerInTurn}</var>
+</assign>
+<msg timestamp="20200131 15:58:40.900" level="INFO">${playerInTurn} = Sanni</msg>
+<status status="PASS" starttime="20200131 15:58:40.875" endtime="20200131 15:58:40.900"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${playerInTurn}</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:40.900" endtime="20200131 15:58:40.901"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${playerInTurn}' != '${robotUser}'</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:40.901" endtime="20200131 15:58:40.901"></status>
+</kw>
+<kw name="Turn One Card">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let cards = [];</arg>
+<arg>document.querySelectorAll("div.board span.card &gt; label &gt; i").forEach((elem, i) =&gt; {</arg>
+<arg>let labelElem = elem.parentElement;</arg>
+<arg>if (labelElem.className === "facedown") cards.push({classes:elem.className, position:i});</arg>
+<arg>});</arg>
+<arg>cards = cards.sort((a, b) =&gt; a.classes.localeCompare(b.classes));</arg>
+<arg>console.log("Turn One Card", cards);</arg>
+<arg>return cards;</arg>
+</arguments>
+<assign>
+<var>@{cards facedown}</var>
+</assign>
+<msg timestamp="20200131 15:58:40.902" level="INFO">Executing JavaScript:
+let cards = [];document.querySelectorAll("div.board span.card &gt; label &gt; i").forEach((elem, i) =&gt; {let labelElem = elem.parentElement;if (labelElem.className === "facedown") cards.push({classes:elem.className, position:i});});cards = cards.sort((a, b) =&gt; a.classes.localeCompare(b.classes));console.log("Turn One Card", cards);return cards;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:58:40.911" level="INFO">@{cards facedown} = [ {'classes': 'fa fa-android', 'position': 6} | {'classes': 'fa fa-android', 'position': 8} | {'classes': 'fa fa-fort-awesome', 'position': 1} | {'classes': 'fa fa-fort-awesome', 'position': 3} | {'cl...</msg>
+<status status="PASS" starttime="20200131 15:58:40.902" endtime="20200131 15:58:40.912"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${base}</var>
+</assign>
+<msg timestamp="20200131 15:58:40.912" level="INFO">${base} = 3</msg>
+<status status="PASS" starttime="20200131 15:58:40.912" endtime="20200131 15:58:40.912"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${base} + ${cards facedown}[0][position]</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200131 15:58:40.913" level="INFO">${nthchild} = 9</msg>
+<status status="PASS" starttime="20200131 15:58:40.912" endtime="20200131 15:58:40.913"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${nthchild}</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200131 15:58:40.913" level="INFO">${nthchild} = 9</msg>
+<status status="PASS" starttime="20200131 15:58:40.913" endtime="20200131 15:58:40.913"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>div.board &gt; span &gt; span:nth-child(${nthchild})</arg>
+</arguments>
+<assign>
+<var>${cardSelector}</var>
+</assign>
+<msg timestamp="20200131 15:58:40.914" level="INFO">${cardSelector} = div.board &gt; span &gt; span:nth-child(9)</msg>
+<status status="PASS" starttime="20200131 15:58:40.913" endtime="20200131 15:58:40.914"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${cardSelector}</arg>
+</arguments>
+<msg timestamp="20200131 15:58:40.914" level="INFO">Clicking element 'css:div.board &gt; span &gt; span:nth-child(9)'.</msg>
+<status status="PASS" starttime="20200131 15:58:40.914" endtime="20200131 15:58:40.955"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20200131 15:58:45.956" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20200131 15:58:40.955" endtime="20200131 15:58:45.956"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:58:40.901" endtime="20200131 15:58:45.957"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:58:39.854" endtime="20200131 15:58:45.957"></status>
+</kw>
+<kw name="${i} = 8" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200131 15:58:46.959" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200131 15:58:45.958" endtime="20200131 15:58:46.959"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let gameover = document.querySelector('.screen-entity-gameover');</arg>
+<arg>if (gameover !== null) return true;</arg>
+<arg>return false;</arg>
+</arguments>
+<assign>
+<var>${gameover}</var>
+</assign>
+<msg timestamp="20200131 15:58:46.961" level="INFO">Executing JavaScript:
+let gameover = document.querySelector('.screen-entity-gameover');if (gameover !== null) return true;return false;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:58:46.974" level="INFO">${gameover} = False</msg>
+<status status="PASS" starttime="20200131 15:58:46.960" endtime="20200131 15:58:46.975"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${gameover} == True</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:46.975" endtime="20200131 15:58:46.976"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerText</arg>
+</arguments>
+<assign>
+<var>${playerInTurn}</var>
+</assign>
+<msg timestamp="20200131 15:58:46.991" level="INFO">${playerInTurn} = Sanni</msg>
+<status status="PASS" starttime="20200131 15:58:46.976" endtime="20200131 15:58:46.991"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${playerInTurn}</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:46.991" endtime="20200131 15:58:46.992"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${playerInTurn}' != '${robotUser}'</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:46.992" endtime="20200131 15:58:46.992"></status>
+</kw>
+<kw name="Turn One Card">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let cards = [];</arg>
+<arg>document.querySelectorAll("div.board span.card &gt; label &gt; i").forEach((elem, i) =&gt; {</arg>
+<arg>let labelElem = elem.parentElement;</arg>
+<arg>if (labelElem.className === "facedown") cards.push({classes:elem.className, position:i});</arg>
+<arg>});</arg>
+<arg>cards = cards.sort((a, b) =&gt; a.classes.localeCompare(b.classes));</arg>
+<arg>console.log("Turn One Card", cards);</arg>
+<arg>return cards;</arg>
+</arguments>
+<assign>
+<var>@{cards facedown}</var>
+</assign>
+<msg timestamp="20200131 15:58:46.993" level="INFO">Executing JavaScript:
+let cards = [];document.querySelectorAll("div.board span.card &gt; label &gt; i").forEach((elem, i) =&gt; {let labelElem = elem.parentElement;if (labelElem.className === "facedown") cards.push({classes:elem.className, position:i});});cards = cards.sort((a, b) =&gt; a.classes.localeCompare(b.classes));console.log("Turn One Card", cards);return cards;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:58:46.999" level="INFO">@{cards facedown} = [ {'classes': 'fa fa-android', 'position': 8} | {'classes': 'fa fa-fort-awesome', 'position': 1} | {'classes': 'fa fa-fort-awesome', 'position': 3} | {'classes': 'fa fa-github', 'position': 0} | {'cla...</msg>
+<status status="PASS" starttime="20200131 15:58:46.992" endtime="20200131 15:58:46.999"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${base}</var>
+</assign>
+<msg timestamp="20200131 15:58:47.000" level="INFO">${base} = 3</msg>
+<status status="PASS" starttime="20200131 15:58:47.000" endtime="20200131 15:58:47.000"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${base} + ${cards facedown}[0][position]</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200131 15:58:47.001" level="INFO">${nthchild} = 11</msg>
+<status status="PASS" starttime="20200131 15:58:47.000" endtime="20200131 15:58:47.001"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${nthchild}</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200131 15:58:47.002" level="INFO">${nthchild} = 11</msg>
+<status status="PASS" starttime="20200131 15:58:47.001" endtime="20200131 15:58:47.002"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>div.board &gt; span &gt; span:nth-child(${nthchild})</arg>
+</arguments>
+<assign>
+<var>${cardSelector}</var>
+</assign>
+<msg timestamp="20200131 15:58:47.002" level="INFO">${cardSelector} = div.board &gt; span &gt; span:nth-child(11)</msg>
+<status status="PASS" starttime="20200131 15:58:47.002" endtime="20200131 15:58:47.002"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${cardSelector}</arg>
+</arguments>
+<msg timestamp="20200131 15:58:47.003" level="INFO">Clicking element 'css:div.board &gt; span &gt; span:nth-child(11)'.</msg>
+<status status="PASS" starttime="20200131 15:58:47.002" endtime="20200131 15:58:47.048"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20200131 15:58:52.049" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20200131 15:58:47.048" endtime="20200131 15:58:52.049"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:58:46.992" endtime="20200131 15:58:52.050"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:58:45.957" endtime="20200131 15:58:52.050"></status>
+</kw>
+<kw name="${i} = 9" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200131 15:58:53.052" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200131 15:58:52.050" endtime="20200131 15:58:53.052"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let gameover = document.querySelector('.screen-entity-gameover');</arg>
+<arg>if (gameover !== null) return true;</arg>
+<arg>return false;</arg>
+</arguments>
+<assign>
+<var>${gameover}</var>
+</assign>
+<msg timestamp="20200131 15:58:53.053" level="INFO">Executing JavaScript:
+let gameover = document.querySelector('.screen-entity-gameover');if (gameover !== null) return true;return false;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:58:53.062" level="INFO">${gameover} = False</msg>
+<status status="PASS" starttime="20200131 15:58:53.052" endtime="20200131 15:58:53.062"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${gameover} == True</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:53.063" endtime="20200131 15:58:53.063"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerText</arg>
+</arguments>
+<assign>
+<var>${playerInTurn}</var>
+</assign>
+<msg timestamp="20200131 15:58:53.085" level="INFO">${playerInTurn} = Sanni</msg>
+<status status="PASS" starttime="20200131 15:58:53.063" endtime="20200131 15:58:53.085"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${playerInTurn}</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:53.086" endtime="20200131 15:58:53.087"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${playerInTurn}' != '${robotUser}'</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:53.087" endtime="20200131 15:58:53.088"></status>
+</kw>
+<kw name="Turn One Card">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let cards = [];</arg>
+<arg>document.querySelectorAll("div.board span.card &gt; label &gt; i").forEach((elem, i) =&gt; {</arg>
+<arg>let labelElem = elem.parentElement;</arg>
+<arg>if (labelElem.className === "facedown") cards.push({classes:elem.className, position:i});</arg>
+<arg>});</arg>
+<arg>cards = cards.sort((a, b) =&gt; a.classes.localeCompare(b.classes));</arg>
+<arg>console.log("Turn One Card", cards);</arg>
+<arg>return cards;</arg>
+</arguments>
+<assign>
+<var>@{cards facedown}</var>
+</assign>
+<msg timestamp="20200131 15:58:53.089" level="INFO">Executing JavaScript:
+let cards = [];document.querySelectorAll("div.board span.card &gt; label &gt; i").forEach((elem, i) =&gt; {let labelElem = elem.parentElement;if (labelElem.className === "facedown") cards.push({classes:elem.className, position:i});});cards = cards.sort((a, b) =&gt; a.classes.localeCompare(b.classes));console.log("Turn One Card", cards);return cards;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:58:53.099" level="INFO">@{cards facedown} = [ {'classes': 'fa fa-fort-awesome', 'position': 1} | {'classes': 'fa fa-fort-awesome', 'position': 3} | {'classes': 'fa fa-github', 'position': 0} | {'classes': 'fa fa-github', 'position': 5} | {'clas...</msg>
+<status status="PASS" starttime="20200131 15:58:53.088" endtime="20200131 15:58:53.099"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${base}</var>
+</assign>
+<msg timestamp="20200131 15:58:53.100" level="INFO">${base} = 3</msg>
+<status status="PASS" starttime="20200131 15:58:53.099" endtime="20200131 15:58:53.100"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${base} + ${cards facedown}[0][position]</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200131 15:58:53.101" level="INFO">${nthchild} = 4</msg>
+<status status="PASS" starttime="20200131 15:58:53.100" endtime="20200131 15:58:53.101"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${nthchild}</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200131 15:58:53.101" level="INFO">${nthchild} = 4</msg>
+<status status="PASS" starttime="20200131 15:58:53.101" endtime="20200131 15:58:53.101"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>div.board &gt; span &gt; span:nth-child(${nthchild})</arg>
+</arguments>
+<assign>
+<var>${cardSelector}</var>
+</assign>
+<msg timestamp="20200131 15:58:53.101" level="INFO">${cardSelector} = div.board &gt; span &gt; span:nth-child(4)</msg>
+<status status="PASS" starttime="20200131 15:58:53.101" endtime="20200131 15:58:53.101"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${cardSelector}</arg>
+</arguments>
+<msg timestamp="20200131 15:58:53.102" level="INFO">Clicking element 'css:div.board &gt; span &gt; span:nth-child(4)'.</msg>
+<status status="PASS" starttime="20200131 15:58:53.101" endtime="20200131 15:58:53.151"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20200131 15:58:58.152" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20200131 15:58:53.151" endtime="20200131 15:58:58.152"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:58:53.088" endtime="20200131 15:58:58.153"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:58:52.050" endtime="20200131 15:58:58.153"></status>
+</kw>
+<kw name="${i} = 10" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200131 15:58:59.155" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200131 15:58:58.154" endtime="20200131 15:58:59.155"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let gameover = document.querySelector('.screen-entity-gameover');</arg>
+<arg>if (gameover !== null) return true;</arg>
+<arg>return false;</arg>
+</arguments>
+<assign>
+<var>${gameover}</var>
+</assign>
+<msg timestamp="20200131 15:58:59.157" level="INFO">Executing JavaScript:
+let gameover = document.querySelector('.screen-entity-gameover');if (gameover !== null) return true;return false;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:58:59.172" level="INFO">${gameover} = False</msg>
+<status status="PASS" starttime="20200131 15:58:59.156" endtime="20200131 15:58:59.172"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${gameover} == True</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:59.173" endtime="20200131 15:58:59.174"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerText</arg>
+</arguments>
+<assign>
+<var>${playerInTurn}</var>
+</assign>
+<msg timestamp="20200131 15:58:59.188" level="INFO">${playerInTurn} = Sanni</msg>
+<status status="PASS" starttime="20200131 15:58:59.174" endtime="20200131 15:58:59.188"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${playerInTurn}</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:59.188" endtime="20200131 15:58:59.189"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${playerInTurn}' != '${robotUser}'</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:58:59.189" endtime="20200131 15:58:59.189"></status>
+</kw>
+<kw name="Turn One Card">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let cards = [];</arg>
+<arg>document.querySelectorAll("div.board span.card &gt; label &gt; i").forEach((elem, i) =&gt; {</arg>
+<arg>let labelElem = elem.parentElement;</arg>
+<arg>if (labelElem.className === "facedown") cards.push({classes:elem.className, position:i});</arg>
+<arg>});</arg>
+<arg>cards = cards.sort((a, b) =&gt; a.classes.localeCompare(b.classes));</arg>
+<arg>console.log("Turn One Card", cards);</arg>
+<arg>return cards;</arg>
+</arguments>
+<assign>
+<var>@{cards facedown}</var>
+</assign>
+<msg timestamp="20200131 15:58:59.190" level="INFO">Executing JavaScript:
+let cards = [];document.querySelectorAll("div.board span.card &gt; label &gt; i").forEach((elem, i) =&gt; {let labelElem = elem.parentElement;if (labelElem.className === "facedown") cards.push({classes:elem.className, position:i});});cards = cards.sort((a, b) =&gt; a.classes.localeCompare(b.classes));console.log("Turn One Card", cards);return cards;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:58:59.197" level="INFO">@{cards facedown} = [ {'classes': 'fa fa-fort-awesome', 'position': 3} | {'classes': 'fa fa-github', 'position': 0} | {'classes': 'fa fa-github', 'position': 5} | {'classes': 'fa fa-youtube-play', 'position': 2} | {'clas...</msg>
+<status status="PASS" starttime="20200131 15:58:59.190" endtime="20200131 15:58:59.197"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${base}</var>
+</assign>
+<msg timestamp="20200131 15:58:59.197" level="INFO">${base} = 3</msg>
+<status status="PASS" starttime="20200131 15:58:59.197" endtime="20200131 15:58:59.197"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${base} + ${cards facedown}[0][position]</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200131 15:58:59.198" level="INFO">${nthchild} = 6</msg>
+<status status="PASS" starttime="20200131 15:58:59.197" endtime="20200131 15:58:59.198"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${nthchild}</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200131 15:58:59.199" level="INFO">${nthchild} = 6</msg>
+<status status="PASS" starttime="20200131 15:58:59.198" endtime="20200131 15:58:59.199"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>div.board &gt; span &gt; span:nth-child(${nthchild})</arg>
+</arguments>
+<assign>
+<var>${cardSelector}</var>
+</assign>
+<msg timestamp="20200131 15:58:59.200" level="INFO">${cardSelector} = div.board &gt; span &gt; span:nth-child(6)</msg>
+<status status="PASS" starttime="20200131 15:58:59.199" endtime="20200131 15:58:59.200"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${cardSelector}</arg>
+</arguments>
+<msg timestamp="20200131 15:58:59.200" level="INFO">Clicking element 'css:div.board &gt; span &gt; span:nth-child(6)'.</msg>
+<status status="PASS" starttime="20200131 15:58:59.200" endtime="20200131 15:58:59.242"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20200131 15:59:04.243" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20200131 15:58:59.242" endtime="20200131 15:59:04.243"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:58:59.189" endtime="20200131 15:59:04.243"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:58:58.153" endtime="20200131 15:59:04.243"></status>
+</kw>
+<kw name="${i} = 11" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200131 15:59:05.245" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200131 15:59:04.244" endtime="20200131 15:59:05.245"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let gameover = document.querySelector('.screen-entity-gameover');</arg>
+<arg>if (gameover !== null) return true;</arg>
+<arg>return false;</arg>
+</arguments>
+<assign>
+<var>${gameover}</var>
+</assign>
+<msg timestamp="20200131 15:59:05.245" level="INFO">Executing JavaScript:
+let gameover = document.querySelector('.screen-entity-gameover');if (gameover !== null) return true;return false;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:59:05.251" level="INFO">${gameover} = False</msg>
+<status status="PASS" starttime="20200131 15:59:05.245" endtime="20200131 15:59:05.251"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${gameover} == True</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:59:05.251" endtime="20200131 15:59:05.252"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerText</arg>
+</arguments>
+<assign>
+<var>${playerInTurn}</var>
+</assign>
+<msg timestamp="20200131 15:59:05.265" level="INFO">${playerInTurn} = Sanni</msg>
+<status status="PASS" starttime="20200131 15:59:05.252" endtime="20200131 15:59:05.265"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${playerInTurn}</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:59:05.265" endtime="20200131 15:59:05.265"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${playerInTurn}' != '${robotUser}'</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:59:05.266" endtime="20200131 15:59:05.266"></status>
+</kw>
+<kw name="Turn One Card">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let cards = [];</arg>
+<arg>document.querySelectorAll("div.board span.card &gt; label &gt; i").forEach((elem, i) =&gt; {</arg>
+<arg>let labelElem = elem.parentElement;</arg>
+<arg>if (labelElem.className === "facedown") cards.push({classes:elem.className, position:i});</arg>
+<arg>});</arg>
+<arg>cards = cards.sort((a, b) =&gt; a.classes.localeCompare(b.classes));</arg>
+<arg>console.log("Turn One Card", cards);</arg>
+<arg>return cards;</arg>
+</arguments>
+<assign>
+<var>@{cards facedown}</var>
+</assign>
+<msg timestamp="20200131 15:59:05.267" level="INFO">Executing JavaScript:
+let cards = [];document.querySelectorAll("div.board span.card &gt; label &gt; i").forEach((elem, i) =&gt; {let labelElem = elem.parentElement;if (labelElem.className === "facedown") cards.push({classes:elem.className, position:i});});cards = cards.sort((a, b) =&gt; a.classes.localeCompare(b.classes));console.log("Turn One Card", cards);return cards;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:59:05.273" level="INFO">@{cards facedown} = [ {'classes': 'fa fa-github', 'position': 0} | {'classes': 'fa fa-github', 'position': 5} ]</msg>
+<status status="PASS" starttime="20200131 15:59:05.266" endtime="20200131 15:59:05.273"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${base}</var>
+</assign>
+<msg timestamp="20200131 15:59:05.274" level="INFO">${base} = 3</msg>
+<status status="PASS" starttime="20200131 15:59:05.274" endtime="20200131 15:59:05.274"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${base} + ${cards facedown}[0][position]</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200131 15:59:05.276" level="INFO">${nthchild} = 3</msg>
+<status status="PASS" starttime="20200131 15:59:05.275" endtime="20200131 15:59:05.276"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${nthchild}</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200131 15:59:05.277" level="INFO">${nthchild} = 3</msg>
+<status status="PASS" starttime="20200131 15:59:05.276" endtime="20200131 15:59:05.277"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>div.board &gt; span &gt; span:nth-child(${nthchild})</arg>
+</arguments>
+<assign>
+<var>${cardSelector}</var>
+</assign>
+<msg timestamp="20200131 15:59:05.277" level="INFO">${cardSelector} = div.board &gt; span &gt; span:nth-child(3)</msg>
+<status status="PASS" starttime="20200131 15:59:05.277" endtime="20200131 15:59:05.277"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${cardSelector}</arg>
+</arguments>
+<msg timestamp="20200131 15:59:05.277" level="INFO">Clicking element 'css:div.board &gt; span &gt; span:nth-child(3)'.</msg>
+<status status="PASS" starttime="20200131 15:59:05.277" endtime="20200131 15:59:05.340"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20200131 15:59:10.342" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20200131 15:59:05.340" endtime="20200131 15:59:10.342"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:59:05.266" endtime="20200131 15:59:10.343"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:59:04.243" endtime="20200131 15:59:10.343"></status>
+</kw>
+<kw name="${i} = 12" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200131 15:59:11.345" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200131 15:59:10.343" endtime="20200131 15:59:11.345"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let gameover = document.querySelector('.screen-entity-gameover');</arg>
+<arg>if (gameover !== null) return true;</arg>
+<arg>return false;</arg>
+</arguments>
+<assign>
+<var>${gameover}</var>
+</assign>
+<msg timestamp="20200131 15:59:11.347" level="INFO">Executing JavaScript:
+let gameover = document.querySelector('.screen-entity-gameover');if (gameover !== null) return true;return false;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:59:11.362" level="INFO">${gameover} = False</msg>
+<status status="PASS" starttime="20200131 15:59:11.345" endtime="20200131 15:59:11.362"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${gameover} == True</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:59:11.363" endtime="20200131 15:59:11.364"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerText</arg>
+</arguments>
+<assign>
+<var>${playerInTurn}</var>
+</assign>
+<msg timestamp="20200131 15:59:11.378" level="INFO">${playerInTurn} = Sanni</msg>
+<status status="PASS" starttime="20200131 15:59:11.364" endtime="20200131 15:59:11.378"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${playerInTurn}</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:59:11.378" endtime="20200131 15:59:11.379"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${playerInTurn}' != '${robotUser}'</arg>
+</arguments>
+<status status="PASS" starttime="20200131 15:59:11.379" endtime="20200131 15:59:11.379"></status>
+</kw>
+<kw name="Turn One Card">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let cards = [];</arg>
+<arg>document.querySelectorAll("div.board span.card &gt; label &gt; i").forEach((elem, i) =&gt; {</arg>
+<arg>let labelElem = elem.parentElement;</arg>
+<arg>if (labelElem.className === "facedown") cards.push({classes:elem.className, position:i});</arg>
+<arg>});</arg>
+<arg>cards = cards.sort((a, b) =&gt; a.classes.localeCompare(b.classes));</arg>
+<arg>console.log("Turn One Card", cards);</arg>
+<arg>return cards;</arg>
+</arguments>
+<assign>
+<var>@{cards facedown}</var>
+</assign>
+<msg timestamp="20200131 15:59:11.380" level="INFO">Executing JavaScript:
+let cards = [];document.querySelectorAll("div.board span.card &gt; label &gt; i").forEach((elem, i) =&gt; {let labelElem = elem.parentElement;if (labelElem.className === "facedown") cards.push({classes:elem.className, position:i});});cards = cards.sort((a, b) =&gt; a.classes.localeCompare(b.classes));console.log("Turn One Card", cards);return cards;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:59:11.386" level="INFO">@{cards facedown} = [ {'classes': 'fa fa-github', 'position': 5} ]</msg>
+<status status="PASS" starttime="20200131 15:59:11.379" endtime="20200131 15:59:11.386"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${base}</var>
+</assign>
+<msg timestamp="20200131 15:59:11.386" level="INFO">${base} = 3</msg>
+<status status="PASS" starttime="20200131 15:59:11.386" endtime="20200131 15:59:11.386"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${base} + ${cards facedown}[0][position]</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200131 15:59:11.387" level="INFO">${nthchild} = 8</msg>
+<status status="PASS" starttime="20200131 15:59:11.387" endtime="20200131 15:59:11.387"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${nthchild}</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200131 15:59:11.388" level="INFO">${nthchild} = 8</msg>
+<status status="PASS" starttime="20200131 15:59:11.387" endtime="20200131 15:59:11.388"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>div.board &gt; span &gt; span:nth-child(${nthchild})</arg>
+</arguments>
+<assign>
+<var>${cardSelector}</var>
+</assign>
+<msg timestamp="20200131 15:59:11.389" level="INFO">${cardSelector} = div.board &gt; span &gt; span:nth-child(8)</msg>
+<status status="PASS" starttime="20200131 15:59:11.388" endtime="20200131 15:59:11.389"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${cardSelector}</arg>
+</arguments>
+<msg timestamp="20200131 15:59:11.389" level="INFO">Clicking element 'css:div.board &gt; span &gt; span:nth-child(8)'.</msg>
+<status status="PASS" starttime="20200131 15:59:11.389" endtime="20200131 15:59:11.433"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20200131 15:59:16.447" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20200131 15:59:11.433" endtime="20200131 15:59:16.447"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:59:11.379" endtime="20200131 15:59:16.447"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:59:10.343" endtime="20200131 15:59:16.447"></status>
+</kw>
+<kw name="${i} = 13" type="foritem">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20200131 15:59:17.447" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200131 15:59:16.447" endtime="20200131 15:59:17.447"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let gameover = document.querySelector('.screen-entity-gameover');</arg>
+<arg>if (gameover !== null) return true;</arg>
+<arg>return false;</arg>
+</arguments>
+<assign>
+<var>${gameover}</var>
+</assign>
+<msg timestamp="20200131 15:59:17.449" level="INFO">Executing JavaScript:
+let gameover = document.querySelector('.screen-entity-gameover');if (gameover !== null) return true;return false;
+Without any arguments.</msg>
+<msg timestamp="20200131 15:59:17.464" level="INFO">${gameover} = True</msg>
+<status status="PASS" starttime="20200131 15:59:17.448" endtime="20200131 15:59:17.464"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${gameover} == True</arg>
+</arguments>
+<msg timestamp="20200131 15:59:17.466" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20200131 15:59:17.465" endtime="20200131 15:59:17.466"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:59:16.447" endtime="20200131 15:59:17.466"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:58:32.652" endtime="20200131 15:59:17.466"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:58:32.651" endtime="20200131 15:59:17.467"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:body &gt; div &gt; span &gt; div &gt; span &gt; button</arg>
+</arguments>
+<msg timestamp="20200131 15:59:17.467" level="INFO">Clicking element 'css:body &gt; div &gt; span &gt; div &gt; span &gt; button'.</msg>
+<status status="PASS" starttime="20200131 15:59:17.467" endtime="20200131 15:59:17.532"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:58:21.282" endtime="20200131 15:59:17.532"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:57:34.408" endtime="20200131 15:59:17.532"></status>
+</kw>
+<status status="PASS" starttime="20200131 15:57:25.916" endtime="20200131 15:59:17.532" critical="yes"></status>
+</test>
+<doc>Robot playing Findpairs memory card game.
+This robot assumes that Findpairs Users contains Sanni.</doc>
+<status status="PASS" starttime="20200131 15:57:25.672" endtime="20200131 15:59:17.534"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Robot Player">Robot Player</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
